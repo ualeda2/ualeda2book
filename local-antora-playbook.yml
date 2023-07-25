@@ -1,0 +1,42 @@
+# Demo Instructions here: https://docs.antora.org/antora/latest/playbook/set-up-playbook/
+# Run antora: npx antora local-antora-playbook.yml
+site:
+  title: UAL EDA2
+  url: https://ualeda2.github.io/ualeda2book
+  start_page: introbook::index.adoc
+content:
+  sources:
+  - url: https://github.com/ualeda2/introbook.git
+    branches: main
+    start_path: docs
+  - url: https://github.com/ualeda2/practica2.git
+    branches: main
+    start_path: docs
+  - url: https://github.com/ualeda2/practica3.git
+    branches: main
+    start_path: docs
+  - url: https://github.com/ualeda2/practica4.git
+    branches: main
+    start_path: docs
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable ## Default
+    snapshot: true
+  supplemental_files: ./supplemental-ui
+  ## supplemental_files: ./node_modules/@antora/lunr-extension/supplemental_ui  ## run once to generate _/js/search-ui.js. Later substitute by your supplemental-ui
+asciidoc:
+  attributes:
+    encoding: utf-8
+    lang: es
+    icons: font
+    figure-caption: Fig.
+    example-caption!:
+#    source-highlighter: rouge   ## not supported
+#    rouge-linenums-mode: inline  ## not supported
+    page-component-sort-order: practica2,  practica3, practica4
+antora:
+  extensions:
+  - require: '@antora/lunr-extension'
+    languages: [es, en]
+output:
+  dir: ./docs
