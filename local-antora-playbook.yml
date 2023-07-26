@@ -1,8 +1,8 @@
 # Demo Instructions here: https://docs.antora.org/antora/latest/playbook/set-up-playbook/
 # Run antora: npx antora local-antora-playbook.yml
 site:
-  title: UAL EDA2
-  url: https://ualeda2.github.io/ualeda2book
+  title: UAL Estructuras de Datos y Algoritmos 2
+  url: http://127.0.0.1:5000/
   start_page: introbook::index.adoc
 content:
   sources:
@@ -33,7 +33,7 @@ asciidoc:
     example-caption!:
 #    source-highlighter: rouge   ## not supported
 #    rouge-linenums-mode: inline  ## not supported
-    page-component-sort-order: practica2,  practica3, practica4
+    page-component-sort-order: introbook, practica2,  practica3, practica4
 antora:
   extensions:
   - require: '@antora/lunr-extension'
